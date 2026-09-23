@@ -33,3 +33,10 @@ A string with no line endings at all returns `null` from `detectLineEnding`. Cal
 - `normalizeLineEndings(text: string, target?: LineEnding): string` — replaces every line ending with the target convention (defaults to LF).
 - `countLineEndings(text: string): { LF: number, CRLF: number, CR: number }` — counts occurrences of each convention; CRLF counts as one, not as both LF and CR.
 - `LineEnding` — frozen object with `LF`, `CRLF`, and `CR` string values.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
