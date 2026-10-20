@@ -1,6 +1,6 @@
 {
   "name": "line-ending-normalizer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Converts text between LF, CRLF, and CR line ending conventions with detection and reporting.",
   "type": "module",
   "main": "src/index.js",
